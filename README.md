@@ -1,65 +1,103 @@
-# My Portfolio Website - Overview 🚀
+# Profile-1 (Majid Portfolio)
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+A personal portfolio web app built with React, TypeScript, Vite, GSAP animations, and Three.js via React Three Fiber. It renders a multi-section portfolio experience with animated transitions, custom cursor behavior, and interactive 3D content.
 
----
+## Features
 
-## ⚠️ Usage Notice
+- Multi-section single-page portfolio layout (Landing, About, What I Do, Career, Work, Tech Stack, Contact)
+- GSAP-driven motion and scroll effects (including `ScrollTrigger`, `ScrollSmoother`, and `SplitText` usage in source)
+- Interactive 3D scenes using Three.js + React Three Fiber ecosystem
+- Lazy-loaded major UI/3D sections for improved initial loading
+- Responsive behavior that adapts 3D/section rendering by viewport
 
-This project is shared for learning purposes only.
+## Technology Stack
 
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
+- **Core**: React 18, React DOM, TypeScript, Vite
+- **3D/Graphics**: Three.js, `@react-three/fiber`, `@react-three/drei`, `@react-three/rapier`, `@react-three/postprocessing`, `three-stdlib`
+- **Animation**: GSAP, `@gsap/react`
+- **UI Utilities**: `react-icons`, `react-fast-marquee`
+- **Tooling**: ESLint 9, typescript-eslint
 
-If you use parts of the code, you must provide proper credit linking back to the original repository.
+## Setup
 
-Build your own version — don’t just copy.
+### Prerequisites
 
-— Moncy Yohannan
+- Node.js 18+ (recommended)
+- npm
 
----
+### Install dependencies
 
-## 🛠️ Instructions
+```bash
+npm install
+```
 
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
+## Run locally
 
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
+```bash
+npm run dev
+```
 
----
+The Vite dev server is configured with `--host`, so it is available on your local network as well.
 
-## ⚙️ Tech Stack
+## Build and preview
 
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
+```bash
+npm run build
+npm run preview
+```
 
----
+## Linting
 
-## 🎨 Assets Usage
+```bash
+npm run lint
+```
 
-Some 3D assets included in this repository are free to use for learning purposes.
+## Testing
 
-However:
+This repository currently does not define a test script in `package.json`. No automated test runner is configured in the current implementation.
 
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
+## Configuration / Environment Variables
 
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+No environment variables are required by the current source (`src`) at this time.
 
----
+## Usage Examples
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+- Start development and open the local Vite URL:
+  ```bash
+  npm run dev
+  ```
+- Validate code style before committing:
+  ```bash
+  npm run lint
+  ```
+- Produce a production build:
+  ```bash
+  npm run build
+  ```
 
----
+## Project Structure
 
-## 📄 License
+```text
+Profile-1/
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # UI sections, 3D wrapper components, utilities/styles
+│   ├── context/             # React context providers
+│   ├── data/                # Data/config consumed by components
+│   ├── App.tsx              # App composition with lazy-loaded sections
+│   └── main.tsx             # React entry point
+├── index.html               # Vite HTML template
+├── package.json             # Scripts and dependencies
+├── tsconfig*.json           # TypeScript configuration
+└── vite.config.ts           # Vite configuration
+```
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
+## Deployment Notes
 
-See the LICENSE file for full details
+This is a Vite static web app. After `npm run build`, deploy the generated `dist/` directory to any static hosting provider.
+
+## Project-specific Notes
+
+- The codebase imports GSAP plugins such as `SplitText` and `ScrollSmoother`; make sure your GSAP setup/license is appropriate for your deployment use case.
+- The repository is shared for learning. See `LICENSE` for usage terms.
 
